@@ -1,4 +1,4 @@
-import Login from "./src/screens/login/Login";
+import Home from "./src/screens/home/Home";
 export default function App() {
-  return <Login />;
+  return <Home />;
 }
