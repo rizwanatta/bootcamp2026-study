@@ -1,4 +1,5 @@
-import Home from "./src/screens/home/Home";
+import MainNavigator from "./src/navigation/MainNavigator";
+
 export default function App() {
-  return <Home />;
+  return <MainNavigator />;
 }

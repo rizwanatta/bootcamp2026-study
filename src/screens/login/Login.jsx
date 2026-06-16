@@ -1,8 +1,8 @@
-import { View, Image, Text, TextInput, Button, ScrollView } from "react-native";
-
+import { View, Image, Text, TextInput, ScrollView } from "react-native";
+import { Button } from "@react-navigation/elements";
 import styles from "./Login.style";
 
-export default function App() {
+export default function Login() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
@@ -30,8 +30,21 @@ export default function App() {
           />
         </View>
 
-        <Button title="Login" />
+        <Button> Login </Button>
+        <Button screen="Register" style={styles.button}>
+          {" "}
+          Create an account
+        </Button>
       </View>
     </ScrollView>
+  );
+}
+
+// make me an exorted button comp
+export function MyButton({ title, onPress }) {
+  return (
+    <Button onPress={onPress} style={styles.button}>
+      {title}
+    </Button>
   );
 }
