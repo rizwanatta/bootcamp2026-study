@@ -1,8 +1,27 @@
 import { View, Image, Text, TextInput, ScrollView } from "react-native";
-import { Button } from "@react-navigation/elements";
+import { useState } from "react";
+
 import styles from "./Login.style";
 
+import { Button } from "../../components";
+
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  function onLoginPressed() {
+    const error =
+      (!email && "Please enter your email") ||
+      (!password && "Please enter your password") ||
+      (!email.includes("@") && "Please enter a valid email");
+
+    if (error) return alert(error);
+
+    setIsValid(true);
+    alert("Login pressed");
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
@@ -13,13 +32,15 @@ export default function Login() {
           }}
         />
 
-        <Text style={styles.label}>Login</Text>
+        <Text style={styles.label}>Login {isValid ? "😱" : "❌"}</Text>
+        <Text style={styles.label}>{email}</Text>
 
         <View style={styles.form}>
           <TextInput
             style={styles.input}
             placeholder="email"
             placeholderTextColor="gray"
+            onChangeText={setEmail}
           />
 
           <TextInput
@@ -27,24 +48,32 @@ export default function Login() {
             placeholder="password"
             placeholderTextColor="gray"
             secureTextEntry={true}
+            onChangeText={setPassword}
           />
         </View>
 
-        <Button> Login </Button>
-        <Button screen="Register" style={styles.button}>
-          {" "}
-          Create an account
-        </Button>
+        <Button
+          title="testme"
+          onPress={onLoginPressed}
+          icon="heart"
+          iconColor="pink"
+          iconSize={80}
+        />
+        <Button
+          title="test 2"
+          onPress={onLoginPressed}
+          icon="home"
+          iconColor="red"
+          iconSize={50}
+        />
+        <Button
+          title="test 3"
+          onPress={onLoginPressed}
+          icon="person"
+          iconColor="green"
+          iconSize={10}
+        />
       </View>
     </ScrollView>
-  );
-}
-
-// make me an exorted button comp
-export function MyButton({ title, onPress }) {
-  return (
-    <Button onPress={onPress} style={styles.button}>
-      {title}
-    </Button>
   );
 }

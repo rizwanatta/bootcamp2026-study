@@ -32,10 +32,6 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 20,
   },
-  button: {
-    marginTop: 20,
-    backgroundColor: "orange",
-  },
 });
 
 export default styles;

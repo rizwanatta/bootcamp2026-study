@@ -4,14 +4,18 @@ import Home from "../screens/home/Home";
 import Login from "../screens/login/Login";
 import Register from "../screens/register/Register";
 import Learn from "../screens/learn/Learn";
+import Counter from "../screens/counter/Counter";
 
 const RootStack = createNativeStackNavigator({
+  screenOptions: {
+    headerShown: false,
+  },
   screens: {
-    Learn: {
-      screen: Learn,
-      options: { headerShown: false },
+    Counter: Counter,
+    Login: {
+      screen: Login,
     },
-    Login: Login,
+    Learn: Learn,
     Home: Home,
     Register: Register,
   },
