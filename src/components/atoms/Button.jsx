@@ -23,12 +23,7 @@ export const Button = ({
 }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Ionicons
-        name={icon}
-        size={iconSize}
-        color={iconColor}
-        style={{ marginRight: 10 }}
-      />
+      <Ionicons name={icon} size={iconSize} color={iconColor} />
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
@@ -40,12 +35,13 @@ const styles = StyleSheet.create({
     backgroundColor: "orange",
     padding: 10,
     borderRadius: 20,
+    flexDirection: "row",
+    alignItems: "center",
   },
   buttonText: {
     color: "white",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    padding: 10,
   },
 });

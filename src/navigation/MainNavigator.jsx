@@ -7,15 +7,17 @@ import Learn from "../screens/learn/Learn";
 import Counter from "../screens/counter/Counter";
 
 const RootStack = createNativeStackNavigator({
+  initialRouteName: "Login",
   screenOptions: {
     headerShown: false,
   },
   screens: {
+    Learn: Learn,
     Counter: Counter,
     Login: {
       screen: Login,
     },
-    Learn: Learn,
+
     Home: Home,
     Register: Register,
   },

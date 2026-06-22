@@ -3,6 +3,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#9f00ff",
+    justifyContent: "center",
+    alignItems: "center",
   },
   itemCon: {
     flexDirection: "row",

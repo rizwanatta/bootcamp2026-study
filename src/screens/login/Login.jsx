@@ -1,5 +1,6 @@
 import { View, Image, Text, TextInput, ScrollView } from "react-native";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import styles from "./Login.style";
 
@@ -10,6 +11,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState(false);
 
+  const navigation = useNavigation();
+
   function onLoginPressed() {
     const error =
       (!email && "Please enter your email") ||
@@ -19,7 +22,8 @@ export default function Login() {
     if (error) return alert(error);
 
     setIsValid(true);
-    alert("Login pressed");
+
+    navigation.navigate("Home", { email });
   }
 
   return (
@@ -53,25 +57,11 @@ export default function Login() {
         </View>
 
         <Button
-          title="testme"
+          title="Login"
           onPress={onLoginPressed}
           icon="heart"
           iconColor="pink"
-          iconSize={80}
-        />
-        <Button
-          title="test 2"
-          onPress={onLoginPressed}
-          icon="home"
-          iconColor="red"
-          iconSize={50}
-        />
-        <Button
-          title="test 3"
-          onPress={onLoginPressed}
-          icon="person"
-          iconColor="green"
-          iconSize={10}
+          iconSize={30}
         />
       </View>
     </ScrollView>
