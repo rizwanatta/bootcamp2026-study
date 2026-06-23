@@ -2,23 +2,22 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#9f00ff",
     justifyContent: "center",
     alignItems: "center",
+    gap: 20,
   },
-  itemCon: {
-    flexDirection: "row",
-    alignItems: "center",
+  greeting: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#ff1493",
+    letterSpacing: 2,
   },
-  item: {
-    fontSize: 24,
-    color: "#fff",
-    padding: 10,
-  },
-  itemImage: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
+  email: {
+    fontSize: 18,
+    color: "#ff69b4",
+    fontWeight: "600",
+    textAlign: "center",
+    paddingHorizontal: 20,
   },
 });
 
