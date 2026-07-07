@@ -5,13 +5,15 @@ import Login from "../screens/login/Login";
 import Register from "../screens/register/Register";
 import Learn from "../screens/learn/Learn";
 import Counter from "../screens/counter/Counter";
+import Signin from "../screens/signin/Signin";
 
 const RootStack = createNativeStackNavigator({
-  initialRouteName: "Login",
+  initialRouteName: "Signin",
   screenOptions: {
     headerShown: false,
   },
   screens: {
+    Signin: Signin,
     Learn: Learn,
     Counter: Counter,
     Login: {
